@@ -1,6 +1,6 @@
 import unittest
 
-from pyffx.codecs import String, Integer
+from pyffx import String, Integer
 
 
 class StringTests(unittest.TestCase):
