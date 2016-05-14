@@ -1,3 +1,7 @@
+.. image:: https://travis-ci.org/emulbreh/pyffx.svg?branch=master
+    :target: https://travis-ci.org/emulbreh/pyffx
+
+
 pyffx
 =====
 
