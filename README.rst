@@ -20,12 +20,12 @@ Usage
 .. code-block:: python
 
     >>> import pyffx
-    >>> e = pyffx.Integer('secret-key')
+    >>> e = pyffx.Integer(b'secret-key')
     >>> e.encrypt(1234)
     6103
     >>> e.decrypt(6103)
     1234
-    >>> e = pyffx.String('secret-key', alphabet='abc')
+    >>> e = pyffx.String(b'secret-key', alphabet='abc')
     >>> e.encrypt('aaabbb')
     'acbacc'
     >>> e.decrypt('acbacc')
