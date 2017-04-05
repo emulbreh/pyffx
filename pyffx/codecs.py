@@ -27,18 +27,17 @@ class Codec(object):
 
 
 class Sequence(Codec):
-    def __init__(self, ffx, alphabet, length=None, **kwargs):
+    def __init__(self, ffx, alphabet, length, **kwargs):
         self.alphabet = alphabet
         self.pack_map = {c: i for i, c in enumerate(alphabet)}
         self.length = length
         super(Sequence, self).__init__(ffx, radix=len(alphabet), **kwargs)
 
     def pack(self, v):
-        padlen = self.length - len(v) if self.length else 0
-        if padlen < 0:
-            raise ValueError('too long')
+        if len(v) != self.length:
+            raise ValueError('sequence length must be %s' % self.length)
         try:
-            return [0] * padlen + [self.pack_map[c] for c in v]
+            return [self.pack_map[c] for c in v]
         except KeyError as e:
             raise ValueError('non-alphabet character: %s' % e)
 
@@ -52,11 +51,11 @@ class String(Sequence):
 
 
 class Integer(String):
-    def __init__(self, ffx, **kwargs):
-        super(Integer, self).__init__(ffx, string.digits, **kwargs)
+    def __init__(self, ffx, length, **kwargs):
+        super(Integer, self).__init__(ffx, string.digits, length, **kwargs)
 
     def pack(self, v):
-        return super(Integer, self).pack(str(v))
+        return super(Integer, self).pack(str(v).zfill(self.length))
 
     def unpack(self, v, t):
         return int(super(Integer, self).unpack(v, t))
