@@ -8,7 +8,7 @@ with open('README.rst') as f:
 setup(
     name='pyffx',
     url='http://github.com/emulbreh/pyffx/',
-    version='0.1.0',
+    version='0.2.0',
     packages=find_packages(),
     license=u'BSD License',
     author=u'Johannes Dollinger',
