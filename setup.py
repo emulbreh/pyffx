@@ -10,7 +10,7 @@ setup(
     url='http://github.com/emulbreh/pyffx/',
     version='0.2.0',
     packages=find_packages(),
-    license=u'BSD License',
+    license=u'MIT License',
     author=u'Johannes Dollinger',
     description=u'pure Python format preserving encryption',
     long_description=description,
@@ -20,7 +20,7 @@ setup(
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3'
