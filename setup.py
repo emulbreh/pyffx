@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
 
+import io
 import sys
 
-with open('README.rst') as f:
+with io.open('README.rst', encoding='utf-8') as f:
     description = f.read()
 
 setup(
